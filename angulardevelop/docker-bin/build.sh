@@ -1,3 +1,4 @@
 #!/bin/bash
 image_name=angulardevelop
-sudo docker-compose run --entrypoint "npm run build" angulardevelop
+cmd="npm run build"
+sudo docker-compose run --entrypoint "${cmd}" $image_name
