@@ -1,0 +1,12 @@
+.main {
+    background-color: #5a5a5a;
+    /* background-color: #292b2c; */
+    color: #fafafa;
+    vertical-align: middle;
+}
+
+.content {
+    height: 32rem;
+    margin-top: 1.2rem;
+    line-height: 1.2em;
+}

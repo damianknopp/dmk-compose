@@ -1,0 +1,55 @@
+version: '2.1'
+services:
+  nginx-gateway:
+    image: nginx:1.11
+    container_name: nginx-gateway
+    ports:
+     - "443:443"
+     - "80:80"
+    depends_on:
+     - nginx-openssl
+    links:
+     - swaggerdevelop
+     - angulardevelop
+    volumes:
+     - ./config/nginx/develop-conf.d:/etc/nginx/conf.d
+     - ./certs/:/etc/pki/tls/certs
+  nginx-openssl:
+    image: svagi/openssl:latest
+    container_name: nginx-openssl
+    entrypoint:
+     - openssl
+     - req
+     - -subj
+     - /CN=localhost/DC=localhost/DC=localdomain
+     - -new
+     - -newkey
+     - rsa:2048
+     - -days
+     - "365"
+     - -nodes
+     - -x509
+     - -keyout
+     - /tmp/certs/server.key
+     - -out
+     - /tmp/certs/server.crt
+    volumes:
+     - ./certs/:/tmp/certs
+  swaggerdevelop:
+    build: ../swaggerdevelop
+    image: swaggerdevelop:latest
+    volumes:
+      - ../swaggerdevelop:/usr/share/swaggerdevelop
+    entrypoint:
+      - npm
+      - run
+      - develop
+  angulardevelop:
+    build: ../angulardevelop
+    image: angulardevelop:latest
+    volumes:
+      - ../angulardevelop:/usr/share/angulardevelop
+    entrypoint:
+      - npm
+      - run
+      - start:hmr

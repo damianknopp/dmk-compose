@@ -1,0 +1,10 @@
+<footer>
+  <div class="social">
+    <span *ngFor="let site of links">
+    <a href="{{site.link}}">
+      <i class="fa fa-{{site.site | lowercase}}" aria-hidden="true"></i>
+        {{site.site | uppercase}}
+    </a>
+  </span>
+  </div>
+</footer>

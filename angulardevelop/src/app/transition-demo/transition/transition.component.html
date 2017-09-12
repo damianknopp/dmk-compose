@@ -1,0 +1,17 @@
+<div class="centerContent" [@parentFadeIn]>
+  
+  <section class="center fadeIn">
+      <span>flip animation</span>
+      <div class="flip">
+        <img src="assets/logo-nav-small.png" />
+      </div>
+  </section>
+  <div *ngFor="let clazz of cssArr" class="center fadeIn" [@slideInOutAnimation]>
+    <span>
+      {{clazz}}
+    </span>
+    <div class="logo {{clazz}}">
+      <img src="assets/logo-nav-small.png" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<!-- Note: canvas must be wrapped in a div to render! -->
+<div [@parentFadeIn]>
+    <div *ngIf="chartData; else noData" class="fadeIn">
+        <canvas #chart width="400" height="400" class="fadeIn"></canvas>
+    </div>
+    
+    <ng-template #noData>
+        No data loaded!
+    </ng-template>
+</div>

@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+  angulardevelop:
+    build: .
+    image: angulardevelop:latest
+    volumes:
+      - ./:/usr/share/angulardevelop
+      # - ./src:/usr/share/angulardevelop/src
+      # - ./dist:/usr/share/angulardevelop/dist
+      # - ./node_modules:/usr/share/angulardevelop/node_modules
+    ports:
+      - "443:443"
+    entrypoint:
+      - npm
+      - run
+      - start:hmr

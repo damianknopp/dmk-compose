@@ -1,0 +1,11 @@
+:host {
+    height: calc(100vh);
+    display: flex;
+    text-align: center;
+    font-size: 2.0em;
+    font-weight: 500;
+}
+
+div {
+    margin: auto auto;
+}

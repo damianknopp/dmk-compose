@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+  swaggerdevelop:
+    build: .
+    image: swaggerdevelop:latest
+    volumes:
+      - ./:/usr/share/swaggerdevelop
+    ports:
+      - "443:443"
+      - "8080:8080"
+      - "10010:10010"
+      - "9898:9898"
+    entrypoint:
+      - npm
+      - run
+      - develop

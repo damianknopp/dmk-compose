@@ -1,0 +1,41 @@
+:host {
+    height: 64px;
+    background-color: #fafafa;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    box-shadow: 2px 2px 1px #888888;    
+}
+
+.flex {
+    /* box-shadow: 0px 0px 1px 0px #ccc; */
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    height: 100%;           
+    margin: auto auto;
+}
+
+.title {
+    flex: 0 auto;
+    margin: auto 0;
+    font-weight: 500;
+    font-size: 1.6em;
+}
+
+.filler {
+    flex: 1 1;
+}
+
+.nav {
+    flex: 0 auto;
+    margin: auto 0;
+}
+
+.nav a {
+    padding-right: 8px;
+    text-decoration: none;
+    margin: auto auto;
+    vertical-align: middle;
+}

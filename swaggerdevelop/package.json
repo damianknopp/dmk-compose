@@ -1,0 +1,26 @@
+{
+  "name": "swaggerdevelop",
+  "version": "0.0.1",
+  "private": true,
+  "description": "New Swagger API Project",
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.12.3",
+    "swagger-express-mw": "^0.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "validate": "swagger validate api/swagger/swagger.yaml",
+    "test": "swagger project test",
+    "edit": "swagger project edit -s -p 9898 --host 0.0.0.0",
+    "develop": "swagger -V && concurrently --kill-others \"npm run edit\" \"npm start\""
+  }
+}
