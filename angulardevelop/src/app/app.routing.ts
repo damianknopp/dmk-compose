@@ -21,6 +21,10 @@ const routes: Routes = [
       loadChildren: 'app/chart-demo/chart-demo.module#ChartDemoModule'
     },
     {
+      path: 'grid',
+      loadChildren: 'app/grid/grid.module#GridModule'
+    },
+    {
       path: '**',
       component: PageNotFoundComponent
     }

@@ -1,7 +1,7 @@
-version: '2.1'
+version: '2.2'
 services:
   nginx-gateway:
-    image: nginx:1.11
+    image: nginx:1.13.5
     container_name: nginx-gateway
     ports:
      - "443:443"
