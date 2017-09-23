@@ -1,6 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRouterPreloader } from './app-router-preloader';
 
 const routes: Routes = [
     {
@@ -10,19 +11,20 @@ const routes: Routes = [
     },
     {
       path: 'home',
-      loadChildren: 'app/home/home.module#HomeModule'
+      loadChildren: 'app/home/home.module#HomeModule',
+      data: { preload: true }
     },
     {
       path: 'transitions',
-      loadChildren: 'app/transition-demo/transition-demo.module#TransitionDemoModule'
+      loadChildren: 'app/transition-demo/transition-demo.module#TransitionDemoModule',
     },
     {
       path: 'charts',
-      loadChildren: 'app/chart-demo/chart-demo.module#ChartDemoModule'
+      loadChildren: 'app/chart-demo/chart-demo.module#ChartDemoModule',
     },
     {
       path: 'grid',
-      loadChildren: 'app/grid/grid.module#GridModule'
+      loadChildren: 'app/grid/grid.module#GridModule',
     },
     {
       path: '**',
@@ -30,4 +32,5 @@ const routes: Routes = [
     }
   ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes, { enableTracing: false });
+export const routing: ModuleWithProviders = 
+  RouterModule.forRoot(routes, { enableTracing: false, preloadingStrategy: AppRouterPreloader });

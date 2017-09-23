@@ -4,11 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { AppRouterPreloader } from './app-router-preloader';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
-import { routing } from './app.routing';
 import { FooterComponent } from './footer/footer.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [AppRouterPreloader],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

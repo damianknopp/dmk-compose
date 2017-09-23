@@ -1,4 +1,4 @@
-version: '2.2'
+version: '3.3'
 services:
   nginx-gateway:
     image: nginx:1.13.5
