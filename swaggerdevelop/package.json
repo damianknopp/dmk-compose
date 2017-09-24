@@ -9,6 +9,7 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.12.3",
+    "mongoose": "^4.11.12",
     "swagger-express-mw": "^0.1.0"
   },
   "devDependencies": {
@@ -17,7 +18,7 @@
     "supertest": "^1.0.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "node -v && node --experimental-modules app.js",
     "validate": "swagger validate api/swagger/swagger.yaml",
     "test": "swagger project test",
     "edit": "swagger project edit -s -p 9898 --host 0.0.0.0",
