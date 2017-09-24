@@ -1,5 +1,9 @@
 'use strict';
 
+// fire up a mongo connection
+const mongoinit = require('./server/mongoinit');
+setTimeout(() => mongoinit(), 5000);
+
 var SwaggerExpress = require('swagger-express-mw');
 var app = require('express')();
 module.exports = app; // for testing

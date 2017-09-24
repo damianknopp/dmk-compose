@@ -35,15 +35,27 @@ services:
      - /tmp/certs/server.crt
     volumes:
      - ./certs/:/tmp/certs
+
   swaggerdevelop:
     build: ../swaggerdevelop
     image: swaggerdevelop:latest
+    depends_on: 
+      - mongorepository
     volumes:
       - ../swaggerdevelop:/usr/share/swaggerdevelop
     entrypoint:
       - npm
       - run
       - develop
+
+  mongorepository:
+    image: mongo:3.4.9
+    container_name: mongorepository
+    ports:
+    - "27018:27017"
+    volumes:
+    - ./data/db:/data/db
+
   angulardevelop:
     build: ../angulardevelop
     image: angulardevelop:latest
